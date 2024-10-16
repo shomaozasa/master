@@ -4,7 +4,7 @@ from django.db import models
 
 #通貨テーブル
 class Currency(models.Model):
-    denomination = models.IntegerField(max_length=10)
+    denomination = models.IntegerField()
     image_url = models.URLField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -12,7 +12,7 @@ class Currency(models.Model):
 #ユーザーの財布テーブル
 class Wallet(models.Model):
     user_id = models.ForeignKey(Currency, on_delete=models.CASCADE)
-    total_amount = models.IntegerField(max_length=10)
+    total_amount = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -20,6 +20,6 @@ class Wallet(models.Model):
 class CurrencyInventory(models.Model):
     currency_id = models.ForeignKey(Currency, on_delete=models.CASCADE)
     wallet_id = models.ForeignKey(Wallet, on_delete=models.CASCADE)
-    quantity = models.IntegerField(max_length=3)
+    quantity = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
