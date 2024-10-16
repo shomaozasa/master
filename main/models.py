@@ -4,7 +4,7 @@ from accounts.models import User
 
 #通貨テーブル
 class Currency(models.Model):
-    denomination = models.IntegerField()
+    denomination = models.IntegerField(default=0)
     image_url = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -12,7 +12,7 @@ class Currency(models.Model):
 #ユーザーの財布テーブル
 class Wallet(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    total_amount = models.IntegerField()
+    total_amount = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -20,6 +20,6 @@ class Wallet(models.Model):
 class CurrencyInventory(models.Model):
     currency_id = models.ForeignKey(Currency, on_delete=models.CASCADE)
     wallet_id = models.ForeignKey(Wallet, on_delete=models.CASCADE)
-    quantity = models.IntegerField()
+    quantity = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
