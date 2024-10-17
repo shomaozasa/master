@@ -5,7 +5,7 @@ from accounts.models import User
 #通貨テーブル
 class Currency(models.Model):
     denomination = models.IntegerField(default=0)
-    image_url = models.CharField(max_length=255)
+    image_url = models.ImageField(upload_to='images/')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
