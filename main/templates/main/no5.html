@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>財布の中身入力</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #cce6ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #e0f3ff;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .wallet-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .wallet-row label {
+            width: 80px;
+            font-weight: bold;
+        }
+
+        .wallet-row input {
+            flex-grow: 1;
+            padding: 5px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .register-button {
+            background-color: #357ABD;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .register-button:hover {
+            background-color: #285a8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wallet-row">
+            <label>1円玉</label>
+            <input type="number" placeholder="財布の中身を入力">
+        </div>
+        <div class="wallet-row">
+            <label>5円玉</label>
+            <input type="number" placeholder="財布の中身を入力">
+        </div>
+        <div class="wallet-row">
+            <label>10円玉</label>
+            <input type="number" placeholder="財布の中身を入力">
+        </div>
+        <div class="wallet-row">
+            <label>50円玉</label>
+            <input type="number" placeholder="財布の中身を入力">
+        </div>
+        <div class="wallet-row">
+            <label>100円玉</label>
+            <input type="number" placeholder="財布の中身を入力">
+        </div>
+        <div class="wallet-row">
+            <label>500円玉</label>
+            <input type="number" placeholder="財布の中身を入力">
+        </div>
+        <div class="wallet-row">
+            <label>1千円札</label>
+            <input type="number" placeholder="財布の中身を入力">
+        </div>
+        <div class="wallet-row">
+            <label>2千円札</label>
+            <input type="number" placeholder="財布の中身を入力">
+        </div>
+        <div class="wallet-row">
+            <label>5千円札</label>
+            <input type="number" placeholder="財布の中身を入力">
+        </div>
+        <div class="wallet-row">
+            <label>1万円札</label>
+            <input type="number" placeholder="財布の中身を入力">
+        </div>
+        <button class="register-button">登録</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お会計画面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #cce6ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .title {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 10px 20px;
+            display: inline-block;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .payment-box {
+            background-color: #ffffff;
+            border: 2px solid #000000;
+            width: 300px;
+            height: 220px;
+            margin: 20px auto;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .payment-box .amount-label {
+            position: absolute;
+            top: 5px;
+            font-size: 16px;
+        }
+
+        .payment-box .currency-buttons {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+
+        .payment-box .total-amount {
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .button {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 10px 20px;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+        }
+
+        .currency-button {
+            background-color: #f0f0f0;
+            border: 1px solid #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .currency-button:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">お会計金額</div>
+        <div class="payment-box">
+            <div class="amount-label">お支払額</div>
+            <!-- 硬貨ごとのボタン -->
+            <div class="currency-buttons">
+                <button class="currency-button" onclick="addAmount(1)">1円</button>
+                <button class="currency-button" onclick="addAmount(5)">5円</button>
+                <button class="currency-button" onclick="addAmount(10)">10円</button>
+                <button class="currency-button" onclick="addAmount(50)">50円</button>
+                <button class="currency-button" onclick="addAmount(100)">100円</button>
+                <button class="currency-button" onclick="addAmount(500)">500円</button>
+                <button class="currency-button" onclick="addAmount(1000)">1000円</button>
+                <button class="currency-button" onclick="addAmount(5000)">5000円</button>
+                <button class="currency-button" onclick="addAmount(10000)">10000円</button>
+            </div>
+            <div class="total-amount" id="totalAmount">0円</div>
+        </div>
+        <div class="button">財布情報の再登録/修正</div>
+    </div>
+
+    <script>
+        // 初期金額を0に設定
+        let total = 0;
+
+        // 金額を追加する関数
+        function addAmount(amount) {
+            total += amount;
+            document.getElementById("totalAmount").textContent = `${total}円`;
+        }
+    </script>
+</body>
+</html>
