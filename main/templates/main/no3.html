@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規登録</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ADD8E6;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin: 15px 0;
+        }
+        .input-group input {
+            width: 300px;
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 20px;
+            text-align: center;
+        }
+        .register-button {
+            margin-top: 20px;
+            width: 320px;
+            padding: 10px;
+            font-size: 18px;
+            background-color: #4A90E2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-link {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">新規登録</div>
+        <div class="input-group">
+            <input type="text" placeholder="名前">
+        </div>
+        <div class="input-group">
+            <input type="password" placeholder="パスワード">
+        </div>
+        <button class="register-button">新規登録</button>
+        <a href="#" class="login-link">ログイン画面へ</a>
+    </div>
+</body>
+</html>
