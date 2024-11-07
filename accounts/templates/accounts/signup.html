@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ログインページ</title>
+    <style>body {
+        font-family: Arial, sans-serif;
+        background-color: #d0e8ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      
+      .login-container {
+        text-align: center;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+      
+      h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      
+      .input-field {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+      
+      .login-button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      .login-button:hover {
+        background-color: #0056b3;
+      }
+      
+      .register-link {
+        display: block;
+        margin-top: 15px;
+        color: #007BFF;
+        text-decoration: none;
+        font-size: 14px;
+      }
+      
+      .register-link:hover {
+        text-decoration: underline;
+      }
+      </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1>ログイン</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+        <P>
+
+        {{ field.label_tag }}<br>
+
+        {{ field }}
+
+        {% if field.help_text %}
+          <small style="color: gray;">{{ field.help_text }}</small>
+        {% endif %}
+
+        {% for error in field.errors %}
+        <p style="color: red;">{{error}}</p>
+        {% endfor %}
+        </P>
+        {% endfor %}
+        <p style="color: red;">
+            ※メールアドレスはパスワードをリセットする際に必要になりますので、
+            登録をお願いします。
+        </p>
+        {% endlock %}
+        <input type="submit" value="sign up">
+      <!-- <input type="text" placeholder="名前" class="input-field">
+      <input type="password" placeholder="パスワード" class="input-field">
+      <button type="submit" class="login-button">ログイン</button> -->
+    </form>
+    <a href="#" class="register-link">新規登録はこちら</a>
+  </div>
+</body>
+</html>
